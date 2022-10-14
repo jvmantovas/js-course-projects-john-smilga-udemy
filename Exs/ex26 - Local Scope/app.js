@@ -1,27 +1,18 @@
-// Global Scope vs Local Scope
-// any variable outside code block {} is said to be in Global Scope
-//can be acessesed anywhered in the program
-// Gotchas: name collisions, modify by mistake
+// Local Scope
+// can't be acessed from outside code blocks
+// if - NOT VAR
 
-let name = "bobo"; //global scope
-name = "peter";
+let name = "bob";
 
 function calculate() {
-  // some other code...
-  console.log(name);
-  name = "orange";
-  function inner() {
-    name = "inner name value";
-    console.log(`this is from inner function ${name}`);
-  }
+  const name = "john"; //cant access outside the local scope
+  becomesGlobal = "global variable"; //if not used with keyword (not a var, const, let), it can be accessed from global scope
 }
-
 calculate();
+console.log(becomesGlobal);
 
 if (true) {
-  // some other code...
-  console.log(name);
-  name = "jonatas";
+  const name = "josh";
 }
 
-console.log(`my name is ${name} and I'm awesome`);
+console.log(`my name is ${name}`);
