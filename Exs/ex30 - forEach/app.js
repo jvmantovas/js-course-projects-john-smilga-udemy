@@ -16,5 +16,5 @@ people.forEach(showPerson);
 
 //anonymous function having the same effect:
 people.forEach(function (item) {
-  console.log(item);
+  console.table(item);
 });
